@@ -1,0 +1,2305 @@
+@h: 14px;
+@h1: 12px;
+@h2: 16px;
+@h3: 18px;
+@h5: 20px;
+@h4: 22px;
+@border: 1px solid #e0e2e3;
+@blue: #53b9bb;
+@gray: #e0e2e3;
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	margin: 0;
+	font-weight: 300;
+	overflow:hidden;
+	-webkit-user-select: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+input{
+    background:inherit;
+    color:white;
+    border:none;
+    outline: none;
+    font-weight: 100;
+    color: #e0e2e3;
+}
+.selected{
+	color:#53b9bb;
+	border-bottom:4px solid #53b9bb;
+	font-weight: bold;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.mainContainer{
+	position: absolute;
+    -webkit-user-select: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .loginScreen {
+	    position: absolute;
+	    -webkit-user-select: none;
+	    height: 100%;
+	    width: 100%;
+	    overflow: hidden;
+	    -webkit-transition: all .6s;
+	    &.slideRight{
+	    	-webkit-transform: translateX(-100%);
+	    }
+    
+	    .loginPortal {
+		    position: relative;
+		    float: left;
+		    width: 1000px;
+		    height: 500px;
+		    left: 50%;
+		    top: 50%;
+	    	-webkit-transform: translate(-50%,-50%);
+		    .leftPanel {
+		        position: relative;
+		        float: left;
+		        width: 500px;
+		        height: 100%;
+		        background: #26262E;
+		        .logo{
+		            position: relative;
+		            float: left;
+		            margin-left: 50px;
+		            margin-top: 50px;
+		            .image{
+		                width:200px;
+		            }
+		        }
+		        .window{
+		            position: relative;
+		            float: left;
+		            margin-left: 50px;
+		            margin-top: 55px;
+		            .header{
+		                position: relative;
+		                float: left;
+		                color: white;
+		                line-height: 30px;
+		                font-size: 24px;
+		            }
+		            .text{
+		                position: relative;
+		                float: left;
+		                padding-right: 50px;
+		                font-size: 12px;
+		                color: rgba(255,255,255,0.4);
+		                padding-top: 10px;
+		                line-height: 16px;
+
+		            }
+		            .btnExplore{
+		                position: relative;
+		                float: left;
+		                margin-top: 20px;
+		                line-height: 30px;
+		                background: #D7715B;
+		                padding: 0 10px;
+		                color:white;
+		                font-weight:500;
+		                border-top-left-radius: 20px;
+		                border-top-right-radius: 20px;
+		                border-bottom-left-radius: 20px;
+		                border-bottom-right-radius: 20px;
+		            }
+		        }
+		    }
+		    .rightPanel {
+		        position: relative;
+		        float: left;
+		        width: 500px;
+		        height: 100%;
+		        background: #32323A;
+		        background-image: url('../images/map.jpg');
+
+		        .overLay {
+	                position: absolute;
+	                left: 0;
+	                top: 0;
+	                background: rgba(43, 43, 51, 0.96);
+	                height: 100%;
+	                width: 100%;
+	                z-index: 1;
+	                padding-top: 10px;
+	                padding-bottom: 20px;
+	                box-sizing: border-box;
+
+		            .window {
+		                position: relative;
+		                float: left;
+		                top: 50%;
+		                -webkit-transform: translateY(-50%);
+		                margin-left: 70px;
+
+		                .header {
+		                    position: relative;
+		                    float: left;
+		                    width: 100%;
+		                    font-size: 24px;
+		                    color: white;
+		                }
+
+		                .logInInput {
+		                        position: relative;
+		                        float: left;
+		                        line-height: 35px;
+		                        width: 80%;
+		                        border-bottom: 1px dotted white;
+		                        margin: 10px 0;
+		                }
+
+		                .btnSubmit {
+		                    position: relative;
+		                    float: left;
+		                    width: 90px;
+		                    font-weight: 500;
+		                    color: white;
+		                    line-height: 25px;
+		                    text-align: center;
+		                    margin-top: 20px;
+		                    background: #646470;
+		                    border-radius: 20px;
+
+		                }
+
+		                .btnResetPassword{
+		                    position: relative;
+		                    float: left;
+		                    color: rgba(255,255,255,0.5);
+		                    line-height: 25px;
+		                    margin-top: 20px;
+		                    margin-left: 30px;
+		                    &:hover{
+		                        color:#5b74a8;
+		                    }
+		                }
+		            }
+		        }
+		    }
+	    }
+	}
+
+  .homeScreen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
+	&.splashIn{
+	      visibility: visible;
+	      opacity: 1;
+	      -webkit-transition: visibility 0s 0.4s, opacity 0.4s linear;
+	}
+   .navbar {
+        position: absolute;
+	    left: 0;
+	    width: 55px;
+	    background-color: #2B333B;
+	    height: 100%;
+	    .menuBarImage {
+		    position: absolute;
+		    width: 40px;
+		    left: 7.5px;
+		    top: 15px;
+		}
+	}
+    .navbarOptions{
+        position: absolute;
+	    width:226px;
+	    background-color: #2B333B;
+	    height: 100%;
+	    z-index: 100;
+	    overflow: auto;
+	    -webkit-transition: all .6s;
+	    -webkit-transform: translateX(-300px);
+	    &.navbarSlide{
+	    	-webkit-transform: translateX(0);
+	    }
+
+	    .userInfoBlock {
+		    position: relative;
+		    float: left;
+		    height: 265px;
+		    width: 100%;
+		    text-align: center;
+
+		    .empImage {
+		    	position: relative;
+		    	float: left;
+			    height: 150px;
+			    width: 150px;
+			    margin-top: 25px;
+			    margin-left: 50%;
+			    -webkit-transform: translateX(-50%);
+			    border-radius: 50%;
+			    border: 2px solid white;
+			    background-image: url(../images/dhiraj.jpg);
+			    background-size: cover;
+			    background-repeat: no-repeat;
+			    background-position: center;
+			}
+			.userName {
+			    position: relative;
+			    float: left;
+			    color: #fff;
+			    width: 100%;
+			    font-size: 22px;
+			    text-align: center;
+			    padding-top: 15px;
+			    letter-spacing: 1px;
+			}
+			.userId {
+			    position: relative;
+			    float: left;
+			    text-align: center;
+			    width: 100%;
+			    font-size: 13px;
+			    color: #9A9898;
+			    padding-top: 10px;
+			    letter-spacing: 1px;
+			}
+		}
+		.userWorkStatus {
+		    position: relative;
+		    float: left;
+		    width: 100%;
+		    padding-left:3px;
+		    box-sizing:border-box;
+		    height: auto;
+		    border-top: 1px dotted gray;
+		    padding-top: 10px;
+		    border-bottom: 1px dotted gray;
+		    padding-bottom: 10px;
+
+
+		    .workStatus {
+		    	position: relative;
+		    	float: left;
+		    	width: 100%;
+			    line-height: 70px;
+			    color: #9A9898;
+			    font-size: 18px;
+			    padding-left: 22px;
+			    box-sizing: border-box;
+	            &:hover {
+				    background: rgba(61,69,76,1);
+	                color:white;
+				}
+			}
+		}
+	    .accountSetting {
+	        position: relative;
+		    float: left;
+		    padding-left: 20px;
+		    width: auto%;
+		    padding-top: 30px;
+		    color: #9A9898;
+		    font-size: 18px;
+	    }
+    }
+    .rightContainer {
+	    position: absolute;
+	    right: 0px;
+	    height: 100%;
+	    left: 55px;
+	    
+	    .menuBar {
+		    position: relative;
+		    float: left;
+		    width: 100%;
+		    height: auto;
+		    background: #fff;
+		    padding-left: 20px;
+		    padding-right: 20px;
+		    box-sizing: border-box;
+            .header {
+            	position: relative;
+			    float: left;
+                background: #fff;
+			    height: 62px;
+			    width: 100%;
+			    .textBox {
+				    background: #fff;
+				    position: relative;
+				    font-size: @h5;
+				    float: left;
+				    line-height: 75px;
+				    letter-spacing: 1px;
+				    font-weight: 400;
+				    color: #73797F;
+				    padding-left: 20px;
+				}
+				.search{
+				    position: absolute;
+				    right: 0;
+				    height: 25px;
+				    width: 230px;
+				    top: 50%;
+				    -webkit-transform: translateY(-50%);
+				    border: 1px solid #e0e2e3;
+				    border-radius: 26px;
+				    .searchImg {
+				        height: 25px;
+				        position: relative;
+				    }
+				    .inputSearch{
+				    	position: absolute;
+					    top: 5.5px;
+					    width: auto;
+					    border-style: none;
+					    border-bottom: @border;
+					    outline: 0;
+					    border: 0;
+					    color: rgba(128, 128, 128, 0.66);
+				    }
+				}
+			}
+    
+		    .menuBarOption {
+			    position: relative;
+			    width: 100%;
+			    height: 65px;
+			    float: left;
+			    border-bottom: @border;
+			    border-top: @border;
+			    background: #fff;
+
+			    .allCategories{
+					position: absolute;
+				    top: 50%;
+				    -webkit-transform: translateY(-50%);
+				    padding: 5px;
+				    width: 109px;
+				    border: 1px solid #C8CCD0;
+				    border-radius: 31px;
+				    font-size: 13px;
+				    text-align: center;
+				    color: #85898C;
+				    letter-spacing: 1px;
+				    font-weight: 700;
+				    cursor: pointer;
+				    background-color: #FAFAFA;
+
+				    .image{
+					    margin-left: 2px;
+					    height:5px;
+					}
+				}
+
+				.optionContainer{
+					position: absolute;
+				    height: 100%;
+				    width: 100%;
+				   
+				    .option{
+					    position: relative;
+					    float: left;
+					    height: 65px;
+					    line-height: 65px;
+				        width: 100px;
+	    				margin-right: 30px;
+					    color: #53b9bb;
+					    text-align: center;
+					    font-weight: 400;
+					    letter-spacing: 1px;
+					    font-size: 16px;
+					    box-sizing: border-box;
+
+					    &:hover {
+					        color:#53b9bb;
+							border-bottom:4px solid #53b9bb;
+							font-weight: 500;
+					    }
+					    &.selected {
+					        color:#53b9bb;
+							border-bottom:4px solid #53b9bb;
+							font-weight: 500;
+					    }
+					}
+					.currentMonth {
+					    position: relative;
+					    float: left;
+					    height: 65px;
+					    line-height: 65px;
+					    width: 138px;
+					    color: rgba(125, 124, 124, 0.8);
+					    margin-right: 30px;
+					    text-align: center;
+					    font-weight: 100;
+					    letter-spacing: 1px;
+					    font-size: 26px;
+					}
+					.currentDate {
+					    position: relative;
+					    float: left;
+					    height: 65px;
+					    line-height: 65px;
+					    width: 180px;
+					    color: rgba(125, 124, 124, 0.8);
+					    margin-right: 30px;
+					    text-align: center;
+					    font-weight: 100;
+					    letter-spacing: 1px;
+					    font-size: 26px;
+					}
+					
+				}
+				.employeeMemberContainer {
+			    position: absolute;
+			    height: 150px;
+			    width: 100%;
+			    top: 0px;
+			    background: rgba(128, 128, 128, 0.09);
+			    visibility: hidden;
+			    opacity: 0;
+			    -webkit-transition: all .6s;
+			    overflow: auto;
+			    &.slideDown{
+			    	-webkit-transform: translateY(65px);
+    				visibility: visible;
+    				opacity: 1;
+			    }
+			    .memberImageBlock {
+				    position: relative;
+				    float: left;
+				    height: 150px;
+				    width: 149px;
+
+				    .imageContainer {
+					    position: absolute;
+					    height: 90px;
+					    width: 90px;
+					    border-radius: 50%;
+					    border: 1px solid white;
+					    left: 50%;
+					    margin-left: -45px;
+					    top: 14px;
+					    background-size: cover;
+					    background-position: center center;
+					}
+				    .name {
+					    position: absolute;
+					    width: 100%;
+					    text-align: center;
+					    bottom: 22px;
+					    font-size: @h2;
+					    line-height: 0px;
+					}
+				}
+
+			}
+				.btnEmployee {
+				    position: absolute;
+				    text-align: center;
+				    padding: 8px 20px 9px 20px;
+				    background-color: #53b9bb;
+				    color: #fff;
+				    right: 0;
+				    top: 50%;
+				    border-radius: 4px;
+				    font-size: @h2;
+				    letter-spacing: 1px;
+				    font-weight: 500;
+				    -webkit-transform: translateY(-50%);
+				}
+				.btnCalendar {
+				    position: absolute;
+				    text-align: center;
+				    padding: 8px 20px 9px 20px;
+				    background-color: #53b9bb;
+				    color: #fff;
+				    right: 0;
+				    top: 50%;
+				    border-radius: 4px;
+				    font-size: @h2;
+				    letter-spacing: 1px;
+				    font-weight: 500;
+				    -webkit-transform: translateY(-50%);
+				}
+				.btnMonth {
+				    position: absolute;
+				    text-align: center;
+				    padding: 8px 20px 9px 20px;
+				    background-color: #53b9bb;
+				    color: #fff;
+				    right: 0;
+				    top: 50%;
+				    border-radius: 4px;
+				    font-size: @h2;
+				    letter-spacing: 1px;
+				    font-weight: 500;
+				    -webkit-transform: translateY(-50%);
+				}
+		    }
+
+   		}
+	    .container {
+            position: absolute;
+		    top: 132px;
+		    width: 100%;
+		    bottom: 0px;
+		    float: left;
+		    padding: 20px;
+		    -webkit-transition: all .6s;
+
+		    .projectContainer {
+		        position: relative;
+			    width: 100%;
+			    height: 100%;
+			    display: block;
+			    -webkit-transition: all .6s;
+			    box-sizing: border-box;
+
+			    .addNewProject {
+			        position: relative;
+			       	float: left;
+				    height: 45px;
+				    width: 90px;
+				    background-color: #53b9bb;
+				    margin-right: 20px;
+				    border-radius: 4px;
+				    padding: 20px;
+				    margin-bottom: 20px;
+				    .plusIcon {
+				        position: absolute;
+					    height: 50px;
+					    left: 50%;
+					    top: 50%;
+					    -webkit-transform: translate(-50%, -50%);
+				    }
+
+			    }
+			    .assignProject {
+				    position: relative;
+				    height: 45px;
+				    width: 90px;
+				    background-color: #efefef;
+				    float: left;
+				    margin-right: 20px;
+				    border-radius: 4px;
+				    padding: 20px;
+				    margin-bottom: 20px;
+				    color: #969696;
+				    font-size: 16px;
+				}
+		    }
+		    .taskContainer {
+		        position: relative;
+			    width: 100%;
+			    height: 100%;
+			    overflow: auto;
+			    display: block;
+			    -webkit-transition: all .6s;
+
+			    .addNewTask {
+			        position: relative;
+				    height: 155px;
+				    width: 19.4%;
+				    background-color: #ededed;
+				    float: left;
+				    border-radius: 4px;
+				    padding: 20px;
+				    margin-right: 20px;
+				    margin-bottom: 20px;
+
+				    .plusSign {
+				       position: absolute;
+					    height: 110px;
+					    left: 50%;
+					    top: 45%;
+					    -webkit-transform: translate(-50%,-50%);
+
+				    }
+				    .addText {
+				        position: absolute;
+					    text-align: center;
+					    bottom: 35px;
+					    height: auto;
+					    left: 50%;
+					    font-weight: 500;
+					    letter-spacing: 1px;
+					    -webkit-transform: translateX(-50%);
+					    color: #53b9bb;
+
+
+				    }
+			    }
+			    .myTasksPage {
+				    position: relative;
+				    float: left;
+				    width: 100%;
+				    height: auto;
+				    display: none;
+
+				    .myTask {
+				        position: relative;
+					    height: 220px;
+					    width: 28.5%;
+					    background-color: #53B9BB;
+					    float: left;
+					    margin-right: 20px;
+					    border-radius: 4px;
+					    margin-bottom: 20px;
+					    background-size: cover;
+					    background-position: center;
+                     .overlay {
+                        position: relative;
+					    float: left;
+					    height: 150px;
+					    width: 100%;
+					    padding: 15px;
+					    box-sizing: border-box;
+					    border-top-left-radius: 4px;
+    					border-top-right-radius: 4px;
+
+					    .task {
+						    position: relative;
+						    font-size: 29px;
+						    float: left;
+						    letter-spacing: 2px;
+						    width: 100%;
+						    color: white;
+						}
+					}
+						.footerPanel {
+						    position: absolute;
+						    width: 100%;
+						    bottom: 0;
+						    height: 70px;
+						    left: 0;
+						    right: 0;
+					        border-bottom-right-radius: 4px;
+    						border-bottom-left-radius: 4px;
+					    .timer {
+							position: absolute;
+						    color: rgba(255, 255, 255, 0.71);
+						    font-size: 40px;
+						    height: 70px;
+						    left: 10px;
+						    line-height: 70px;
+						    display: none;
+							}
+							.expectedTimeBlock {
+							   position: absolute;
+							    left: 15px;
+							    bottom: 7px;
+
+							    .time {
+								    position: relative;
+								    float: left;
+								    font-size: 45px;
+								    color: #fff;
+								    font-weight: 100;
+								}
+								.display {
+								    position: relative;
+								    float: right;
+								    font-size: 17px;
+								    padding-top: 26px;
+								    color: #fff;
+								    font-weight: bold;
+								    letter-spacing: 1px;
+								}
+							}
+							.btnBlockPause {
+								position: absolute;
+							    color: #fff;
+							    font-size: 18px;
+							    display: none;
+							    right: 0px;
+							    height: 70px;
+							    width: 135px;
+
+								    .display {
+									    position: absolute;
+									    font-size: 24px;
+									    top: 50%;
+									    -webkit-transform: translateY(-50%);
+									    font-weight: bold;
+									    letter-spacing: 1px;
+									    right: 75px;
+									}
+									.btnImage {
+									    height: 50px;
+									    width: 50px;
+									    position: absolute;
+									    right: 10px;
+									    top: 50%;
+									    background-size: cover;
+									    background-position: center;
+									    -webkit-transform: translateY(-50%);
+									    background-image: url("../images/btnPause.png");
+
+
+									}
+									  &.selected{
+									   display: none;
+									   
+									    }
+								}
+								.btnBlockResume {
+								position: absolute;
+							    color: #fff;
+							    font-size: 18px;
+							    display: none;
+							    right: 0px;
+							    height: 70px;
+							    width: 135px;
+
+
+								    .display {
+									    position: absolute;
+									    font-size: 24px;
+									    top: 50%;
+									    -webkit-transform: translateY(-50%);
+									    font-weight: bold;
+									    letter-spacing: 1px;
+									    right: 75px;
+									}
+									.btnImage {
+									    height: 50px;
+									    width: 50px;
+									    position: absolute;
+									    right: 10px;
+									    top: 50%;
+									    background-size: cover;
+									    background-position: center;
+									    -webkit-transform: translateY(-50%);
+									    background-image: url("../images/btnPlay.png");
+
+
+									}
+									  &.selected{
+									   display: block;
+									   
+									    }
+								}
+							.project {
+							    position: absolute;
+							    right: 20px;
+							    bottom: 12px;
+							    color: rgba(255, 255, 255, 0.63);
+							    font-size: 25px;
+							}
+						}
+				    }
+				}
+			    .addedTaskBlock {
+			       position: relative;
+				    height: 155px;
+				    width: 19.4%;
+				    background-color: @blue;
+				    float: left;
+				    border-radius: 4px;
+				    margin-right: 20px;
+				    padding: 20px;
+				    margin-bottom: 20px;
+
+				    .projectName {
+				       position: relative;
+					    height: 24px;
+					    line-height: 10px;
+					    border-bottom: 1px solid white;
+					    color: #fff;
+					    font-size: 16px;
+					    font-weight: 600;
+					    letter-spacing: 1px;
+				    }
+				    .taskName {
+				        position: relative;
+					    color: #fff;
+					    height: auto;
+					    font-size: 26px;
+					    padding-top: 8px;
+					    letter-spacing: 1px;
+
+				    }
+				    .btnPickBlock {
+				        position: absolute;
+					    height: 40px;
+					    width: 40px;
+					    border-radius: 50%;
+					    bottom: 20px;
+					    right: 20px;
+					    background-color: #fff;
+					    .pickImg {
+					        width: auto;
+						    height: 25px;
+						    position: relative;
+						    margin-left: 4px;
+						    margin-top: 7px;
+					    }
+				    }
+				.employeeImgBlock{
+				    position: absolute;
+				    width: auto;
+				    height: 50px;
+				    bottom: 15px;
+				    left: 20px;
+				    overflow: auto;
+
+				     .employeeImg {
+				       position: relative;
+				       height:40px;
+				       width: 40px;
+				       border: 3px solid white;
+				       float: left;
+				       border-radius: 50%;
+				       margin-right: 10px;
+				        background-size: cover;
+					    background-repeat: no-repeat;
+					    background-position: center;
+
+				     }
+				    }
+			    }
+
+		    }
+		    .empAttendanceContainer {
+		        position: relative;
+			    width: 100%;
+			    height: 645px;
+			    overflow: auto;
+			    display: block;
+			    -webkit-transition: all .6s;
+
+			    .attendancePage {
+			        position: relative;
+				    width: 23%;
+				    height: 200px;
+				    float: left;
+				    margin-right: 20px;
+				    margin-bottom: 20px;
+				    box-sizing: border-box;
+				    box-shadow: 3px 2px 4px 0px rgba(105,104,104,.11);
+
+				    .header{
+			            position: relative;
+			            float: left;
+			            width: 100%;
+			            height: 100px;
+			            background:#FF9A00;
+			            box-sizing: border-box;
+			            border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+
+			            .text{
+		                    position: relative;
+		                    float: left;
+		                    /* width: 100%; */
+		                    font-size: 24px;
+		                    color: white;
+		                    margin-top: 25px;
+		                    margin-left: 10px; 
+			            }
+			            .currentDate {
+			                position: relative;
+						    float: left;
+						    font-size: 14px;
+						    color: white;
+						    margin-left: 10px;
+						    width: 70%;
+			            }
+
+			            .image{      
+		                    position: relative;
+		                    float: left;
+		                    width: 70px;
+		                    margin-left: 15px;
+		                    height: 70px;
+		                    margin-top: 15px;
+		                    border-radius: 50%;
+		                    background: white;
+		                    background-position: center;
+		                    background-size: cover;
+		                    border: 2px solid white;
+		                    box-sizing: border-box;
+			            }
+			        }
+
+			        .information {
+					    position: absolute;
+					    float: left;
+					    width: 100%;
+					    height: 100px;
+					    bottom: 0px;
+					    color: grey;
+
+					    .punchInDetails {
+					        position: relative;
+						    float: left;
+						    width: 49.5%;
+						    height: 80px;
+						    margin-top: 10px;
+						    margin-bottom: 10px;
+						    border-right: 1px solid #f4f4f4;
+
+						    .timeBlock {
+							    position: relative;
+							    height: 50px;
+							    width: 100%;
+							    left: 50%;
+							    float: left;
+							    font-size: 24px;
+							    text-align: center;
+							    -webkit-transform: translateX(-50%);
+							    line-height: 50px;
+							    margin-top: 10px;
+							}
+							.textField {
+							    position: absolute;
+							    bottom: 5px;
+							    left: 50%;
+							    -webkit-transform: translateX(-50%);
+							}
+					    }
+					    .punchOutDetails {
+					        position: relative;
+						    float: left;
+						    width: 50%;
+						    height: 80px;
+						    margin-top: 10px;
+						    margin-bottom: 10px;
+
+						    .timeBlock {
+							    position: relative;
+							    height: 50px;
+							    width: 100%;
+							    left: 50%;
+							    float: left;
+							    font-size: 24px;
+							    text-align: center;
+							    -webkit-transform: translateX(-50%);
+							    line-height: 50px;
+							    margin-top: 10px;
+							}
+							.textField {
+							    position: absolute;
+							    bottom: 5px;
+							    left: 50%;
+							    -webkit-transform: translateX(-50%);
+							}
+					    }
+					}
+
+			    }
+		    }
+
+		    .employeeInfoContainer {
+		        position: relative;
+			    width: 100%;
+			    height: 645px;
+			    display: block;
+			    overflow: auto;
+			    -webkit-transition: all .6s;
+
+			    .employeeLog {
+			        position: relative;
+				    width: 30.4%;
+				    height: 200px;
+				    float: left;
+				    margin-right: 20px;
+				    margin-bottom: 20px;
+				    box-sizing: border-box;
+				    box-shadow: 3px 2px 4px 0px rgba(105,104,104,.11);
+
+			        .header{
+			            position: relative;
+			            float: left;
+			            width: 100%;
+			            height: 100px;
+			            background: #53b9bb;
+			            padding: 20px;
+			            box-sizing: border-box;
+			            border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+
+			            .text{
+			                position: relative;
+			                float: left;
+			                width:100%;
+			                font-size: @h4;
+			                color: white; 
+			            }
+			            .subText{
+		                    position: relative;
+		                    float: left;
+		                    font-size: @h1;
+		                    color: white;
+		                    margin-top: 5px;
+			            }
+			            .image{
+			                position: absolute;
+						    width: 80px;
+						    height: 80px;
+						    border-radius: 50%;
+						    background: white;
+						    top: 60px;
+						    background-position: center;
+						    background-size: cover;
+						    left: 50%;
+						    background-repeat: no-repeat;
+						    -webkit-transform: translateX(-50%);
+						    border: 2px solid white;
+						    box-sizing: border-box;
+						    z-index: 1;
+			            }
+			        }
+			        .information {
+			            position: relative;
+			            float: left;
+			            width: 100%;
+			            height: 100px;
+			            background: white;
+
+			            .option {
+			                position: relative;
+			                float: left;
+			                width: 33%;
+			                height: 90px;
+			                margin:5px 0;
+			                border-right: 1px solid #F4F4F4;
+			                text-align:center;
+			                color: #73797F;
+			                line-height:20px;
+
+			                &:last-child{
+			                    border-right:none;
+			                }
+			                .data{
+			                    margin-top:45px;
+			                    font-weight:700;
+			                    font-size:14px;
+			                }
+			                .text{
+			                    font-size: 13px;
+			                    font-weight: 400;
+			                }
+			            }
+			        }
+			    }
+		    }
+		    .empLogContainer {
+                position: relative;
+			    width: 100%;
+			    height: 645px;
+			    display: block;
+			    overflow: auto;
+			    -webkit-transition: all .6s; 
+
+                .projectLog {
+			        position: relative;
+					float: left;
+			        width: 30.4%;
+			        height: auto;
+			        margin-bottom: 30px;
+			        margin-left: 30px;
+			        box-sizing: border-box;
+			        box-shadow: 3px 2px 4px 0px rgba(105,104,104,.11);
+
+			        .header{
+			            position: relative;
+			            float: left;
+			            width: 100%;
+			            height: 100px;
+			            background:#FF9A00;
+			            box-sizing: border-box;
+			            border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+
+			            .text{
+		                    position: relative;
+		                    float: left;
+		                    font-size: 24px;
+		                    color: white;
+		                    margin-top: 25px;
+		                    margin-left: 10px; 
+			            }
+			            .subText{
+			                position: relative;
+						    float: left;
+						    font-size: 14px;
+						    color: white;
+						    margin-left: 10px;
+						    width: 70%;
+			            }
+
+			            .image{      
+		                    position: relative;
+		                    float: left;
+		                    width: 70px;
+		                    margin-left: 15px;
+		                    height: 70px;
+		                    margin-top: 15px;
+		                    border-radius: 50%;
+		                    background: white;
+		                    background-position: center;
+		                    background-size: cover;
+		                    border: 2px solid white;
+		                    box-sizing: border-box;
+			            }
+			        }
+			        .information{
+			            position: relative;
+			            float: left;
+			            width: 100%;
+			            height: auto;
+			            background: white;
+
+			            .option {
+			                position: relative;
+			                float: left;
+			                width: 100%;
+			                height: auto;
+			                border-bottom: 1px solid #F4F4F4;
+			                color: #73797F;
+			                
+			                &:last-child{
+			                    border-bottom:none;
+			                }
+
+			                .head{
+			                    position:relative;
+			                    float:left;
+			                    font-weight:700;
+			                    font-size:@h1;
+			                    padding-left:20px;
+			                    line-height:50px;
+			                }
+			                .value {
+			                    position: relative;
+			                    float: right;
+			                    font-size: 13px;
+			                    font-weight: 400;
+			                    text-align: center;
+			                    margin-right: 15px;
+			                    width: 30px;
+			                    height: 25px;
+			                    border-radius: 20px;
+			                    background: #006FBA;
+			                    margin-top: 12.5px;
+			                    color: white;
+			                    line-height: 25px;
+			                    &.blue{
+			                        background: #006FBA;
+			                    }
+			                    &.skyBlue{
+			                        background:#00C1F3;
+			                    }
+			                    &.green{
+			                        background:#00AF5D;
+			                    }
+			                }
+			                .subOptions {
+							       position: relative;
+									float: left;
+									display:none;
+
+							    .subOption {
+								    position: relative;
+								    float: left;
+								    padding-left: 20px;
+								    padding-right: 20px;
+								    width: 100%;
+								    height: 50px;
+								    line-height: 50px;
+								    box-sizing: border-box;
+								    border-bottom: 1px solid #F4F4F4;
+								}
+
+								&.selectedOption {
+								    height: auto;
+								    display: block;
+								}
+							}
+			            }
+			        }
+			    }
+		    }
+	    }
+	}
+
+}
+    .chatPanel {
+		    position: absolute;
+		    float: left;
+		    height: 100%;
+		    width: 450px;
+		    right: -450px;
+		    -webkit-transition: all .9s;
+		    background: #fafafa;
+		     &.slideChat{
+	        	right:450px;
+			}
+		    .chatDescription {
+		        position: relative;
+			    float: left;
+			    height: 100%;
+			    width: 100%;
+			    box-sizing: border-box;
+			    padding-left: 20px;
+			    padding-right: 20px;
+
+                .chatHeader{
+			    	position: relative;
+			    	float: left;
+				    height: 62px;
+				    line-height: 62px;
+				    width: 100%;
+				    font-size: 24px;
+				    font-weight: 400;
+				    color: #53b9bb;
+				    border-bottom: 1px solid #e0e2e3;
+			    }
+
+			    .chatBlock {
+				    position: relative;
+				    text-align: center;
+				    height: 65px;
+				    width: 100%;
+				    float: left;
+				    font-size: 16px;
+				    border-bottom: 1px solid #e0e2e3;
+
+				    .member {
+				        position: relative;
+					    height: 40px;
+					    float: left;
+					    width: 40px;
+					    margin-top: 10px;
+					    margin-left: 10px;
+					    border-radius: 50%;
+					    border: 2px solid white;
+					    background-image: url("../images/dhiraj.jpg");
+					    background-size: cover;
+					    background-position: center;
+			       }
+
+
+			    input.chatBox {
+			        font-family: 'Roboto',sans-serif;
+				    height: 100%;
+				    width: 75%;
+				    background: transparent;
+				    position: relative;
+				    float: left;
+				    padding-left: 15px;
+				    box-sizing: border-box;
+				    border: 0;
+				    outline: 0;
+				    font-size: 20px;
+				    color: #c8ccd0;
+				    font-weight: 100;
+				}
+			}
+			.chatSummary {
+			    position: relative;
+			    width: 100%;
+			    float: left;
+			    height: 73%;
+			   .chatHistory {
+			        position: absolute;
+				    width: 100%;
+				    top: 0;
+				    bottom: 0;
+				    overflow: auto;
+			     .chats{
+					position: relative;
+				    float: left;
+				    width: 100%;
+				    height: auto;
+				    margin-top: 15px;
+				    border-bottom: 1px solid #e0e2e3;
+				
+				.member {
+			        position: relative;
+				    float: left;
+				    height: 40px;
+				    width: 40px;
+				    border-radius: 50%;
+				    border: 2px solid white;
+				    background-image: url("../images/dhiraj.jpg");
+				    background-size: cover;
+				    background-position: center;
+		        }
+				
+				.chat{
+					position: relative;
+				    height: 100%;
+				    width: 100%;
+				    padding-left: 63px;
+				    box-sizing: border-box;
+				    .text{
+				    	position: relative;
+					    float: left;
+					    height: auto;
+					    line-height: 25px;
+					    color: #909090;
+				    }
+				    .textTime{
+				    	color: #909090;
+					    position: relative;
+					    float: left;
+					    height: 20px;
+					    line-height: 20px;
+					    margin-bottom: 15px;
+					    font-size: 12px;
+					    font-weight: 700;
+				    }
+				}
+				.time{
+				    box-sizing: border-box;
+				    position: absolute;
+				    right: 0;
+				    font-size: 12px;
+				    height: auto;
+				    font-weight: bold;
+				    top: 17px;
+
+			    }
+			}
+			   }
+			} 
+
+		    }
+		    .btnCloseChat {
+	    	    position: absolute;
+			    width: 100%;
+			    background-color: #53b9bb;
+			    bottom: 0;
+			    text-align: center;
+			    font-size: 20px;
+			    color: rgba(255,255,255,0.7);
+			    color: white;
+			    line-height: 70px;
+
+			}
+		}
+    .sideScreen {
+	    position: absolute;
+	    right: -450px;
+	    top:0px;
+	    height: 100%;
+	    width: 450px;
+	    border-left: 1px solid #e0e2e3;
+	    background: #fff;
+	    z-index: 1;
+	    background: #fafafa;
+	    -webkit-transition: all .6s;
+	    &.slideLeft{
+	    	right: 0;
+	    }
+        
+        .projectDetailsPanel {
+		    position: relative;
+		    float: left;
+		    height: 100%;
+		    width: 100%;
+
+		    .projectDescriptionBlock {
+		        position: relative;
+			    float: left;
+			    height: 100%;
+			  	padding-left: 20px;
+			    padding-right: 20px;
+			    width: 100%;
+                box-sizing: border-box;
+
+                .projectName{
+		    	    position: relative;
+				    height: 62px;
+				    width: 100%;
+				    float: left;
+				    line-height: 62px;
+				    font-size: 24px;
+				    color: #53b9bb;
+				    border-bottom: 1px solid #e0e2e3;
+				    font-weight: 400;
+			    }
+			    .projectMemberBlock {
+			       position: relative;
+				    width: 100%;
+				    height: auto;
+				    float: left;
+				    box-sizing: border-box;
+				    border-bottom: @border;
+				    margin-top: 10px;
+			       .member {
+				       position: relative;
+					    height: 50px;
+					    float: left;
+					    width: 50px;
+					    border-radius: 50%;
+					    border: 2px solid white;
+					    background-image: url("../images/dhiraj.jpg");
+					    background-size: cover;
+					    background-position: center;
+					    margin-right: 10px;
+					    margin-bottom: 10px;
+			       }
+
+			    }
+
+				    
+                .allTask {
+                    position: absolute;
+				    top: 220px;
+				    left: 30px;
+				    right: 30px;
+				    bottom: 75px;
+				    overflow: auto;
+
+				    .assignedTask {
+				        position: relative;
+					    float: left;
+					    border-bottom: @border;
+					    width: 100%;
+					    text-align: center;
+					    line-height: 50px;
+					    font-size: 26px;
+					    color: @blue;
+				        margin-bottom: 10px;
+    					box-sizing: border-box;
+				    }
+			    }
+		    } 
+
+		    .btnStartChat {
+	    	    position: absolute;
+			    width: 100%;
+			    background-color: #53b9bb;
+			    bottom: 0;
+			    text-align: center;
+			    font-size: 20px;
+			    color: rgba(255,255,255,0.7);
+			    color: white;
+			    line-height: 70px;
+
+			}
+		}
+	    .pickTaskPanel {
+	        position: relative;
+		    float: left;
+		    height: 100%;
+		    width: 100%;
+		    .taskDescriptionBlock {
+		        position: relative;
+			    float: left;
+			    height: auto;
+			    padding-left: 20px;
+			    padding-right: 20px;
+			    width: 100%;
+                box-sizing: border-box;
+		    
+			    .projectName{
+			    	position: relative;
+				    height: 62px;
+				    width: 100%;
+				    float: left;
+				    box-sizing: border-box;
+				    line-height: 62px;
+				    font-size: 24px;
+				    font-weight: 400;
+				    color: #53b9bb;
+				    border-bottom: @border;
+			    }
+			    .taskName{
+					position: relative;
+				    float: left;
+				    width: 100%;
+				    font-size: 28px;
+				    line-height: 35px;
+				    letter-spacing: 2px;
+				    margin-top: 10px;
+				    color: @blue;
+				}
+
+				.timerBlock {
+					position: relative;
+				    height: 40px;
+				    width: 100%;
+				    float: left;
+				    font-weight: 100;
+					.estimatedTime {
+					    position: relative;
+					    float: left;
+					    font-size: 20px;
+					    margin-top: 15px;
+					    color: rgba(0,149,207,0.7);
+					 }
+					 input.timer{
+					    position: relative;
+					    float: left;
+					    font-size: 35px;
+					    width:40px;
+					    height: auto;
+					    background: transparent;
+					    border: none;
+					    color: #BFC0C0;
+					    outline: none;
+					    font-family: 'roboto', 'sans-serif';
+					    padding-left: 5px;
+					    padding-right: 5px;
+					 }
+
+				}
+
+				 .writeRemark {
+				    position: relative;
+				    text-align: center;
+				    height: 140px;
+				    width: 100%;
+				    float: left;
+				    margin-top: 15px;
+				    font-size: @h2;
+				    background-color: white;
+
+				    input.addRemarkBox {
+				        font-family: 'Roboto',sans-serif;
+					    height: 100%;
+					    width: 100%;
+					    letter-spacing: 0.5px;
+					    background: transparent;
+					    padding-bottom: 95px;
+					    padding-left: 15px;
+					    position: relative;
+					    box-sizing: border-box;
+					    border: 0;
+					    outline: 0;
+					    font-weight: initial;
+					    font-size: 20px;
+					    color: #c8ccd0;
+					}
+					.addRemarkBox::-webkit-input-placeholder {
+                        color: #B5B5B5;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 100;
+                        font-size: 16px;
+                    }
+
+				} 
+			}
+			 .footer {
+    	    position: absolute;
+		    width: 100%;
+		    background-color: #53b9bb;
+		    bottom: 0;
+		    text-align: center;
+		    font-size: 20px;
+		    color: rgba(255,255,255,0.7);
+		    
+			    .btnSave{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+			    }
+			    .btnCancel{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+				    border-right: 1px solid white;
+			    }
+	    	}
+		}
+
+	    .congratulationPage {
+	        position: relative;
+		    float: left;
+		    height: 100%;
+		    width: 100%;
+		    padding-left: 20px;
+		    padding-right: 20px;
+		    box-sizing: border-box;
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    background-position: center;
+		    background-color: #e85462;
+		    .greetingText {
+		    position: relative;
+		    color: #fff;
+		    font-weight: 700;
+		    width: 100%;
+		    text-align: center;
+		    font-size: 40px;
+		    margin-top: 50px;
+		    letter-spacing: 2px;
+
+		    }
+		    .congratsImgBlock{
+			    position: relative;
+			    float: left;
+			    height: 230px;
+			    width: 100%;
+			    padding-top: 20px;
+			    .congratsImg {
+			        position: absolute;
+				    left: 50%;
+				    -webkit-transform: translateX(-50%);
+				    height: 230px;
+			    }
+			}
+		    .completedText {
+			    position: relative;
+			    float: left;
+			    font-size: 26px;
+			    width: 100%;
+			    text-align: center;
+			    color: #fff;
+			    letter-spacing: 2px;
+			    font-weight: 400;
+			    padding-top: 20px;
+
+		    }
+		    .taskStatus {
+			    position: relative;
+			    float: left;
+			    width: 100%;
+			    height: auto;
+			    padding-left: 30px;
+			    padding-right: 30px;
+			    padding-top: 20px;
+			    font-size: 30px;
+			    box-sizing: border-box;
+			    text-align: center;
+			    color: rgba(255,255,255,0.8);
+			    font-weight: 100;
+			    letter-spacing: 2px;
+			}
+			.statusText {
+			    position: relative;
+			    float: left;
+			    width: 100%;
+			    text-align: center;
+			    padding-top: 20px;
+			    color: #fff;
+			    font-size: 40px;
+			    letter-spacing: 2px;
+
+			}
+		    .btnThanx {
+			    position: absolute;
+			    height: 70px;
+			    line-height: 70px;
+			    bottom: 20px;
+			    background-color: #fff;
+			    text-align: center;
+			    font-size: 20px;
+			    left: 20px;
+			    right: 20px;
+			    color: #e85462;
+			    letter-spacing: 2px;
+			}
+		}
+
+	    .taskRemarkPage {
+	        position: relative;
+		    float: left;
+		    height: 100%;
+		    width: 100%;
+          	.taskRemarkPageBlock{
+			    position: relative;
+			    float: left;
+			    height: 100%;
+			    padding-left: 20px;
+			    padding-right: 20px;
+			    box-sizing: border-box;
+			  
+				.header{
+					position: relative;
+				    width: 100%;
+				    float: left;
+				    height: 160px;
+				    border-bottom: 3px solid #e0e2e3;
+				    color: #53b9bb;
+					.projectTitle{
+						position: relative;
+					    float: left;
+					    width: 190px;
+					    height: 62px;
+					    line-height: 62px;
+					    font-size: 22px;
+					    border-bottom: @border;
+					    font-weight: 400;
+		   			    letter-spacing: 1px;
+					}
+					.taskName{
+						position: relative;
+					    float: left;
+					    width: 75%;
+					    font-size: 22px;
+					    line-height: 24px;
+					    margin-top: 9px;
+					    font-weight: 100;
+					    letter-spacing: 1px;
+					}
+					.timeLogBlock{
+						position: absolute;
+					    height: 70px;
+					    width: 70px;
+					    top: 30px;
+					    right: 0px;
+					    .logText {
+						   font-weight: 500; 
+						}
+					}
+				}
+		        .remarkBlock {
+		            position: relative;
+		            float: left;
+		            width: 100%;
+		            height: 69%;
+
+					.remarkHeading{
+					    position: relative;
+					    float: left;
+					    width: 100%;
+					    padding-left: 10px;
+					    padding-right: 10px;
+					    height: 50px;
+					    line-height: 50px;
+					    color: #73797F;
+					    border-bottom: 1px solid #e0e2e3;
+					    font-size: 16px;
+					    font-weight: 500;
+					    box-sizing: border-box;
+					    letter-spacing: 1px;
+					}
+					.remarkEnter{
+					    position: relative;
+					    float: left;
+					    height: 70px;
+					    width: 100%;
+					    box-sizing: border-box;
+					    border-bottom: 1px solid #e0e2e3;
+							
+						.empImage{
+						  position: absolute;
+						    height: 40px;
+						    width: 40px;
+						    left: 10px;
+						    top: 50%;
+						    -webkit-transform: translateY(-50%);
+						    border-radius: 50%;
+						}
+						.writeComment{
+							position: absolute;
+						    left: 65px;
+						    width: 350px;
+						    height: 30px;
+						    top: 18px;
+						    outline: 0;
+						    background: transparent;
+						    border: 0;
+						    font-size: 20px;
+						    font-family: 'roboto','sans-serif';
+						}		
+					}
+					.empRemarks{
+					    position: absolute;
+					    left: 10px;
+					    right: 10px;
+					    overflow: auto;
+					    top: 120px;
+					    bottom: 0;
+					}
+				}
+			}
+			.btnFooter {
+		        position: absolute;
+			    width: 100%;
+			    background-color: #53b9bb;
+			    bottom: 0;
+			    text-align: center;
+			    font-size: 20px;
+			    color: rgba(255,255,255,0.7);
+
+			    .btnSubAddTask{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+			    }
+			    .btnEndTask{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+				    border-left: 1px solid white;
+			    }
+			}    
+		}
+
+        .addProjectContainer {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+	        .editProjectPanel {
+			    position: relative;
+			    float: left;
+			    height: auto;
+			    width: 100%;
+			    padding-left: 20px;
+			    padding-right: 20px;
+			    box-sizing: border-box;
+
+			    input.projectName {
+				    position: relative;
+				    float: left;
+				    height: 64px;
+				    width: 100%;
+				    padding-top: 20px;
+				    padding-left: 15px;
+				    box-sizing: border-box;
+				    color: #B5B5B5;
+				    background: transparent;
+				    border-bottom: 1px solid #e0e2e3;
+				    font-size: 20px;
+				}
+				.projectName::-webkit-input-placeholder {
+                        color: #B5B5B5;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 100;
+                        font-size: 20px;
+                        }
+				input.projectId {
+				    position: relative;
+				    float: left;
+				    height: 64px;
+				    width: 100%;
+				    padding-top: 20px;
+				    padding-left: 15px;
+				    box-sizing: border-box;
+				    color: #e0e2e3;
+				    background: transparent;
+				    border-bottom: 1px solid #e0e2e3;
+				    font-size: 20px;
+				}
+				.projectId::-webkit-input-placeholder {
+                        color: #B5B5B5;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 100;
+                        font-size: 20px;
+                        }
+				.text {
+				    position: relative;
+				    float: left;
+				    width: 100%;
+				    padding-top: 20px;
+				    text-align: center;
+				    color: #B5B5B5;
+				    font-weight: 300;
+				    font-size: 16px;
+				}
+			}	
+
+			.footerBlock{
+	    	    position: absolute;
+			    width: 100%;
+			    background-color: #53b9bb;
+			    bottom: 0;
+			    text-align: center;
+			    font-size: 20px;
+			    color: rgba(255,255,255,0.7);
+
+			    .btnSave{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+			    }
+			    .btnCancel{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+				    border-right: 1px solid white;
+			    }
+	    	}
+		}	
+	    .projectTaskDetails{
+    	    position: relative;
+		    float: left;
+		    width: 100%;
+		    padding-right: 20px;
+		    padding-left: 20px;
+		    box-sizing: border-box;
+
+		    .project{
+			    position: relative;
+			    height: 62px;
+			    width: 100%;
+			    float: left;
+			    line-height: 62px;
+			    font-size: 22px;
+			    color: #53b9bb;
+			    font-weight: 400;
+			    border-bottom: 1px solid rgba(95,95,95,.22);
+		    }
+		    .addedTask{  
+			    position: relative;
+			    height: 40px;
+			    width: 100%;
+			    margin-top: 15px;
+			    border-radius: 3px;
+			    float: left;
+			    box-sizing: border-box;
+			    line-height: 30px;
+			    font-size: 26px;
+			    color: rgba(0,0,0,.41);
+		    }
+            .expectedTime {
+			    position: relative;
+			    float: left;
+			    width: 100%;
+			    height: auto;
+			    padding-top: 15px;
+			    padding-bottom: 25px;
+
+			    .time {
+				    position: relative;
+				    float: left;
+				    font-size: 50px;
+				    color: #7E8389;
+				}
+				.display {
+				    position: relative;
+				    float: left;
+				    font-size: 24px;
+				    padding-top: 25px;
+				    padding-left: 5px;
+				    color: rgba(0,0,0,.41);
+				}
+			}
+			.membersImageBox {
+			    position: relative;
+			    float: left;
+			    height: 80px
+			    overflow: auto;
+			    width: 100%;
+			    padding-bottom: 5px;
+
+			    img.memberImg {
+				    position: relative;
+				    height: 78px;
+				    width: 19%;
+				    margin-right: 20px;
+				    border-radius: 50%;
+				}
+			}
+
+			.btnStart {
+			    position: relative;
+			    height: 70px;
+			    width: 100%;
+			    float: left;
+			    background-color: #53b9bb;
+			    text-align: center;
+			    line-height: 70px;
+			    font-size: 22px;
+			    margin-top: 20px;
+			    color: rgba(255,255,255,0.8);
+			    letter-spacing: 1px;
+			}
+		    
+		}
+
+	   	.projectSelectionBlock {
+	        position: relative;
+		    float: left;
+		    height: auto;
+		    width: 100%;
+		    padding-left: 20px;
+    		padding-right: 20px;
+		    box-sizing: border-box;
+
+		    .selectProject {
+		        position: relative;
+			    height: 62px;
+			    width: 100%;
+			    float: left;
+			    line-height: 62px;
+			    font-size: 22px;
+			    color: #53b9bb;
+			    border-bottom: @border;
+			    font-weight: 400;
+		    }
+		    .definedProject {
+		        position: relative;
+			    height: auto;
+			    width: 100%;
+			    float: left;
+			    padding-top: 30px;
+    			padding-left: 10px;
+
+                 .definedProjectBlock {
+                    position: relative;
+				    height: 100px;
+				    width: 26%;
+				    margin-bottom: 30px;
+				    margin-right: 30px;
+				    float: left;
+				    background-color: #fff;
+				    box-shadow: 3px 2px 4px 0px rgba(105,104,104,.19);
+
+			    .projectName {
+			        position: absolute;
+				    color: #53b9bb;
+				    font-size: 16px;
+				    font-weight: 400;
+				    top: 50%;
+				    width: 100%;
+				    text-align: center;
+				    -webkit-transform: translateY(-50%);
+			    }
+			    }
+
+		    }
+	    }
+
+	    .projectDetails{
+    	    position: relative;
+		    float: left;
+		    height: 100%;
+		    width: 100%;
+		    .taskDescriptionBlock{
+			    position: relative;
+			    float: left;
+			    height: 100%;
+			    padding-left: 20px;
+			    padding-right: 20px;
+			    width: 100%;
+			    box-sizing: border-box;
+			    .projectName{
+			    	position: relative;
+				    height: 62px;
+				    width: 100%;
+				    float: left;
+				    box-sizing: border-box;
+				    line-height: 62px;
+				    font-size: 24px;
+				    color: #53b9bb;
+				    border-bottom: @border;
+				    font-weight: 400;
+			    }
+			    input.addTask{
+				    position: relative;
+				    height: 45px;
+				    width: 100%;
+				    margin-top: 20px;
+				    float: left;
+				    box-sizing: border-box;
+				    line-height: 30px;
+				    font-size: 28px;
+				    color: rgba(0,0,0,.41);
+				    border: none;
+				    font-family: 'roboto','sans-serif';
+				    outline: none;
+				    background: transparent;
+				    border-bottom: @border;	    	
+			    }
+			    .writeTask {
+				    position: relative;
+				    text-align: center;
+				    height: 120px;
+				    width: 100%;
+				    float: left;
+				    margin-top: 15px;
+				    font-size: @h2;
+
+				    input.addDescBox {
+				        font-family: 'Roboto',sans-serif;
+					    height: 100%;
+					    width: 100%;
+					    letter-spacing: 0.5px;
+					    background: transparent;
+					    padding-bottom: 95px;
+					    position: relative;
+					    box-sizing: border-box;
+					    border: 0;
+					    outline: 0;
+					    font-weight: initial;
+					    font-size: 20px;
+					    color: #c8ccd0;
+					}
+					.addDescBox::-webkit-input-placeholder {
+                        color: #B5B5B5;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 100;
+                        font-size: 16px;
+                    }
+				}
+
+				.timerBlock {
+					 position: relative;
+				    height: 40px;
+				    width: 100%;
+				    float: left;
+					.estimatedTime {
+					    position: relative;
+					    float: left;
+					    font-size: 20px;
+					    margin-top: 15px;
+					    color: rgba(0,149,207,0.7);
+					 }
+					 input.timer{
+					    position: relative;
+					    float: left;
+					    font-size: 35px;
+					    width:40px;
+					    height: auto;
+					    background: transparent;
+					    border: none;
+					    color: #BFC0C0;
+					    outline: none;
+					    font-family: 'roboto', 'sans-serif';
+					    padding-left: 5px;
+					    padding-right: 5px;
+					 }
+
+				}
+
+				.assignedMember {
+				    position: relative;
+				    width: 100%;
+				    float: left;
+				    height: 50px;
+				    background-color: #fff;
+				    margin-top: 10px;
+				    box-sizing: border-box;
+
+				    .text {
+					    position: relative;
+					    float: left;
+					    width: 94%;
+					    height: 48px;
+					    line-height: 50px;
+					    font-size: 17px;
+					    color: #53b9bb;
+					    box-sizing: border-box;
+					    font-weight: 500;
+					    letter-spacing: 1px;
+					    padding-left: 25px;
+					}
+					
+
+				}
+				.projectMemberBlock {
+				    position: relative;
+				    width: 100%;
+				    float: left;
+				    height: 225px;
+				    overflow: auto;
+				    background-color: #fff;
+				    opacity: 0;
+				    -webkit-transition: all .6s;
+				    box-sizing: border-box;
+				    padding-left: 10px;
+				    padding-right: 10px;
+				    &.showMembers{
+				    	opacity: 1;
+				    }
+
+				    .member {
+				        position: relative;
+					    height: 100px;
+					    width: 25%;
+					    float: left;
+					    margin-top: 10px;
+
+				       .employeeImage{
+				            position: absolute;
+						    width: 65px;
+						    height: 65px;
+						    left: 50%;
+						    background-position: center;
+                            background-size: cover;
+						    -webkit-transform: translateX(-50%);
+						    border-radius: 50%;
+				       }
+				       .memberName {
+				            position: absolute;
+						    text-align: center;
+						    bottom: 5px;
+						    width: 100%;
+						    color: #73797F;
+    						font-weight: 500;
+						    &.selected{
+						    color: #53b9bb;
+						    font-weight: 600;
+						    }
+				       }
+				    }
+				}    
+		    }
+		.footerBlock {
+    	    position: absolute;
+		    width: 100%;
+		    background-color: #53b9bb;
+		    bottom: 0;
+		    left:0px;
+		    text-align: center;
+		    font-size: 20px;
+		    color: rgba(255,255,255,0.7);
+		    
+			    .btnSave{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+			    }
+			    .btnCancel{
+			    	position: relative;
+				    float: left;
+				    margin-top: 15px;
+				    height: 50px;
+				    width: 49.5%;
+				    line-height: 50px;
+				    margin-bottom: 15px;
+				    border-right: 1px solid white;
+			    }
+	    	}
+    	}
+		    
+		    
+	    }
+        &.slideIn {
+        	right:0;
+		}
+	}
+}
